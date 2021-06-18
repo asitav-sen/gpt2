@@ -11,7 +11,7 @@ gpt2_run <- function(prompt = "Hello my name is",
   install_gpt2_verify()
 
   pin_name <- paste("gpt2", model, sep = "_")
-  if (nrow(pins::pin_find(name = pin_name, board = board)) == 0) gpt2_download(model = model)
+  if (nrow(pins::pin_find(name = pin_name, board = board)) == 0) gpt2_download(model = model, board=board)
 
   py_path <- system.file("python", package = "gpt2")
   py_gpt2 <- reticulate::import_from_path("gpt2", path = py_path)
