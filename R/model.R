@@ -100,7 +100,7 @@ gpt2 <- function(prompt = "Hello my name is",
                  total_tokens = NULL,
                  temperature = 1,
                  top_k = 0,
-                 top_p = 1) {
+                 top_p = 1, board="dospace") {
   sapply(prompt, function(prompt) gpt2_run(
     prompt,
     model = model,
@@ -109,6 +109,7 @@ gpt2 <- function(prompt = "Hello my name is",
     total_tokens = total_tokens,
     temperature = temperature,
     top_k = top_k,
-    top_p =  as.integer(top_p)
+    top_p =  as.integer(top_p),
+    board=board
   ))
 }
